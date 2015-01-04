@@ -214,7 +214,7 @@
 					"$(inherited)",
 					/opt/intel/composer_xe_2015.1.108/compiler/lib,
 				);
-				OTHER_CPLUSPLUSFLAGS = "-fopenmp";
+				OTHER_CPLUSPLUSFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = /usr/local/include;
 			};
@@ -234,7 +234,7 @@
 					"$(inherited)",
 					/opt/intel/composer_xe_2015.1.108/compiler/lib,
 				);
-				OTHER_CPLUSPLUSFLAGS = "-fopenmp";
+				OTHER_CPLUSPLUSFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = /usr/local/include;
 			};
