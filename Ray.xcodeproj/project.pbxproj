@@ -203,6 +203,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_VERSION = "";
+				ICC_CXX_LANG_DIALECT = "c++0x";
+				ICC_CXX_LIBRARY = "libc++";
+				ICC_LANG_OPENMP = parallel;
+				ICC_OPT_PARALLEL = YES;
+				ICC_OTHER_CPLUSPLUSFLAGS = "-O3";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/intel/composer_xe_2015.1.108/compiler/lib,
+				);
+				OTHER_CPLUSPLUSFLAGS = "-fopenmp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = /usr/local/include;
 			};
@@ -212,6 +224,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				GCC_VERSION = "";
+				ICC_CXX_LANG_DIALECT = "c++0x";
+				ICC_CXX_LIBRARY = "libc++";
+				ICC_LANG_OPENMP = parallel;
+				ICC_OPT_PARALLEL = YES;
+				ICC_OTHER_CPLUSPLUSFLAGS = "-O3";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/intel/composer_xe_2015.1.108/compiler/lib,
+				);
+				OTHER_CPLUSPLUSFLAGS = "-fopenmp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = /usr/local/include;
 			};
@@ -236,6 +259,7 @@
 				E07004531A55B5120011E1FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
