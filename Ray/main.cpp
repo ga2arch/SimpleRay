@@ -107,7 +107,7 @@ inline int to_int(double f) {
 int main() {
     int w = 800, h = 600;
     
-    Ray cam(Vec(0, 0, -3), norm(Vec(0,0,0)));
+    Ray cam(Vec(0, 0, -300), norm(Vec(0,0,0)));
     Vec *c = new Vec[w*h];
     
     Sphere s(Vec(0,2,0), Vec(), Vec(.6, 0, .2), 1);
@@ -116,11 +116,11 @@ int main() {
         for (int x=0; x < w; x++) {
             int i = (h-y-1)*w+x;
             
-            auto fovDist = .557;
-            auto xx = (2 * ((x + 0.5) * 1.0/w) - 1) * fovDist * w/h;
-            auto yy = (1 - 2 * ((y + 0.5) * 1.0/h)) * fovDist;
+            auto fov_dist = 2 * (cam.o.z + 290) * tan(45 * .5 * M_PI/180);
+            auto xx = (2 * ((x + 0.5) * 1.0/w) - 1) * fov_dist * w/h;
+            auto yy = (1 - 2 * ((y + 0.5) * 1.0/h)) * fov_dist;
             
-            Ray r(cam.o, norm(Vec(xx,yy,-1)));
+            Ray r(cam.o, norm(Vec(xx,yy,1000)));
             
             double t;
             if (s.intersect(r, &t) && t <= 1000)
@@ -134,6 +134,8 @@ int main() {
     fprintf(f, "P3\n%d %d\n%d\n", w, h, 255);
     for (int i=0; i<w*h; i++)
         fprintf(f,"%d %d %d ", to_int(c[i].x), to_int(c[i].y), to_int(c[i].z));
+    
+    fclose(f);
 }
 
 
