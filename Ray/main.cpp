@@ -110,13 +110,15 @@ int main() {
     Ray cam(Vec(0, 0, -300), norm(Vec(0,0,0)));
     Vec *c = new Vec[w*h];
     
+    Vec iplane(0, 0, -290);
+    
     Sphere s(Vec(0,2,0), Vec(), Vec(.6, 0, .2), 1);
     
     for(int y=0; y < h; y++) {
         for (int x=0; x < w; x++) {
             int i = (h-y-1)*w+x;
             
-            auto fov_dist = 2 * (cam.o.z + 290) * tan(45 * .5 * M_PI/180);
+            auto fov_dist = 2 * (cam.o.z - iplane.z) * tan(45 * .5 * M_PI/180);
             auto xx = (2 * ((x + 0.5) * 1.0/w) - 1) * fov_dist * w/h;
             auto yy = (1 - 2 * ((y + 0.5) * 1.0/h)) * fov_dist;
             
