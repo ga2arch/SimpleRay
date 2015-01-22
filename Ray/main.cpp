@@ -107,10 +107,10 @@ inline int to_int(double f) {
 int main() {
     int w = 800, h = 600;
     
-    Ray cam(Vec(0, 0, -300), norm(Vec(0,0,0)));
+    Ray cam(Vec(0, 0, -3), norm(Vec(0,0,0)));
     Vec *c = new Vec[w*h];
     
-    Vec iplane(0, 0, -290);
+    Vec iplane(0, 0, 3);
     
     Sphere s(Vec(0,2,0), Vec(), Vec(.6, 0, .2), 1);
     
