@@ -1,1 +1,3 @@
 # SimpleRay
+
+A simple raytracer
